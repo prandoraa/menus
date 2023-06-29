@@ -1,0 +1,66 @@
+*{
+    /* margin distancia do espaço externo dos elementos*/
+    margin:0;
+    /*padding distancia interna dos elementos - exemplo entre inicio da margin e primeira letra de uma caixa*/
+    padding:0;
+}
+
+body{
+    /*para por imagem "url:()"*/
+    background: #848484;
+}
+nav{
+    /*4 margins - cima baixo esquerda direita (o que não for colocado se repetirá) auto-centralizar*/
+    margin:150px auto;
+    width:450px;
+    height:450px;
+}
+/* para falar de ID no css, usar "#", para classe ".")*/
+#check{
+    display: none;
+}
+
+#central{
+    cursor: pointer;
+    width: 150px;
+    height: 150px;
+    position: absolute;
+    margin: 150px 150px;
+    z-index: 1;
+}
+
+#central img{
+    width: 100%;
+    border-radius: 50%;
+    transition: all .5s linear;
+}
+
+.link {
+    position: absolute;
+    margin: 195px 195px;
+    width: 60px;
+    height: 60px;
+    border-radius:50%;
+    transition: all .5s linear;
+}
+
+#check:checked ~ a #link01{
+    transform: translateY(-195px);
+    transition: all .5 linear;
+}
+#check:checked ~ a #link02{
+    transform: translateX(-195px);
+    transition: all .5 linear;
+}
+#check:checked ~ a #link03{
+    transform: translateY(195px);
+    transition: all .5 linear;
+}
+#check:checked ~ a #link04{
+    transform: translateX(195px);
+    transition: all .5 linear;
+}
+
+#check:checked ~ #central img{
+    transform: rotate(45deg);
+}
